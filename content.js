@@ -1,4 +1,34 @@
-// content.js
-var firstHref = $("a[href^='http']").eq(0).attr("href");
+  var links = {
+    init: function() {
+      this.cacheDom();
+      this.bindEvents();
+      this.render();
+    },
 
-console.log(firstHref);
+    cacheDom: function() {
+      this.$mainContainer = $('#mainContainer');
+      this.$links = this.$mainContainer.find(".UFILikeLink")
+    },
+
+    bindEvents: function() {
+     
+    },
+
+    render: function() {
+      console.log(this.$mainContainer);
+      console.log(this.$links);
+      this.setClick(this.$links);
+    },
+
+    setClick: function(links) {
+      links.each(function() {
+        console.log(this);
+        this.click();
+      });
+    },
+    
+  };
+  
+links.init();
+
+
