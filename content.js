@@ -32,3 +32,20 @@
 links.init();
 
 
+$(document).ready(function(){
+  $("#contentArea").hover(setFilters, isEnabled);
+});
+
+function setFilters(){
+  chrome.extension.sendRequest({'action' : 'get_filters'},
+    function(response) {
+      console.log(response);
+    });
+}
+
+function isEnabled(){
+  chrome.extension.sendRequest({'action':'is_enabled'},
+    function(response) {
+      console.log(response);
+    })
+}
