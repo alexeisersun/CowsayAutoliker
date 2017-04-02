@@ -8,8 +8,14 @@
       "matches": [
         "https://www.facebook.com/", "https://www.facebook.com/*"
       ],
-
       "js":["jquery.min.js", "content.js"]
     }
-  ]
+  ],
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  }
 }
