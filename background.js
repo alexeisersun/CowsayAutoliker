@@ -35,6 +35,9 @@ function updateCallback(callback){
 }
 
 function onRequest(request, sender, callback) {
+  console.log("request");
+  console.log(request);
+  console.log(sender);
   switch (request.action){
     case "get_filters":
       getFilters(callback);
